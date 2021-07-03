@@ -2,7 +2,7 @@ const http = require('http');
 const Student = require('./student');
 
 const server = http.createServer((request, response) => {
-  const { url } = request;
+  const { method, url } = request;
 
   const students = [
     new Student(101, 'Ahmad Fasehan'),
@@ -12,13 +12,20 @@ const server = http.createServer((request, response) => {
     new Student(105, 'Rido Raudho'),
   ];
 
-  if (url === '/') {
-    response.setHeader('Content-Type', 'text/html');
-    response.end('Welcome');
+  if (method === 'GET') {
+    switch(url) {
+      case '/':
+        response.setHeader('Content-Type', 'text/html');
+        response.end('Welcome');
+        break;
+      default:
+        response.setHeader('Content-Type', 'text/html');
+        response.end('<h1>404 - Page not found.</h1>');
+    }
   }
 });
 
-const port = 5000;
+const port = 3000;
 const host = 'localhost';
 server.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}`);
