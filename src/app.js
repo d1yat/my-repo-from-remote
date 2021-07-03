@@ -17,7 +17,7 @@ const server = http.createServer((request, response) => {
   }
 });
 
-const port = 5000;
+const port = 3000;
 const host = 'localhost';
 server.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}`);
