@@ -1,0 +1,23 @@
+{
+  "name": "my-repo-from-remote",
+  "version": "1.0.0",
+  "description": "SCM untuk pemula",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d1yat/my-repo-from-remote.git"
+  },
+  "author": "Akhirudin Sudiyat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d1yat/my-repo-from-remote/issues"
+  },
+  "homepage": "https://github.com/d1yat/my-repo-from-remote#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
