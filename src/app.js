@@ -1,11 +1,18 @@
 const http = require('http');
 
 const server = http.createServer((request, response) => {
-  const { url } = request;
+  const { method, url } = request;
 
-  if (url === '/') {
-    response.setHeader('Content-Type', 'text/html');
-    response.end('Welcome');
+  if (method === 'GET') {
+    switch(url) {
+      case '/':
+        response.setHeader('Content-Type', 'text/html');
+        response.end('Welcome');
+        break;
+      default:
+        response.setHeader('Content-Type', 'text/html');
+        response.end('<h1>404 - Page not found.</h1>');
+    }
   }
 });
 
