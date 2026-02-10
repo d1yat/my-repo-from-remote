@@ -12,11 +12,13 @@ const server = http.createServer((request, response) => {
     new Student(105, 'Rido Raudho'),
   ];
 
+  const result = { status: 200, data: students };
+
   if (method === 'GET') {
-    switch(url) {
+    switch (url) {
       case '/':
-        response.setHeader('Content-Type', 'text/html');
-        response.end('Welcome');
+        response.setHeader('Content-Type', 'application/json');
+        response.end(JSON.stringify(result));
         break;
       default:
         response.setHeader('Content-Type', 'text/html');
