@@ -12,7 +12,11 @@ const server = http.createServer((request, response) => {
     new Student(105, 'Rido Raudho'),
   ];
 
-  const result = { status: 200, data: students };
+  const result = { 
+    status: 200, 
+    message: 'success',
+    data: students 
+  };
 
   if (method === 'GET') {
     switch (url) {
