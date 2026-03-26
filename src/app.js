@@ -24,6 +24,10 @@ const server = http.createServer((request, response) => {
         response.setHeader('Content-Type', 'application/json');
         response.end(JSON.stringify(result));
         break;
+      case '/welcome':
+        response.setHeader('Content-Type', 'application/json');
+        response.end('Welcome');
+        break;
       default:
         response.setHeader('Content-Type', 'text/html');
         response.end('<h1>404 - Page not found.</h1>');
